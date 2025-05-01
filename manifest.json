@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Subtitle Translator",
+    "version": "1.0",
+    "description": "Translate YouTube subtitles to English.",
+    "permissions": ["scripting", "activeTab"],
+    "host_permissions": ["https://www.youtube.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "icons": {
+        "16": "images/icon16 copy.png",
+        "48": "images/icon48 copy.png",
+        "128": "images/icon128 copy.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
